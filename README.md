@@ -13,4 +13,9 @@ Solutions are implemented in:
 
 ## Author
 
-Jeff Robert Dagala - [jrdagala@gmail.com](mailto:jrdagala@gmail.com)
+Jeff Robert Dagala
+
+### Connect with me
+
+- Email ![Gmail Icon](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white) - [hello@jrdagala.com](mailto:hello@jrdagala.com)
+- LinkedIn ![LinkedIn Icon](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white) - [https://www.linkedin.com/in/jrdagala/](https://www.linkedin.com/in/jrdagala/)
