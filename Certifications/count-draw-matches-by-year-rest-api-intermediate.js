@@ -1,6 +1,7 @@
 const https = require('https');
 const { URL } = require('url');
 
+// getRequest makes an HTTPS GET request to the specified endpoint and returns the parsed JSON response.
 async function getRequest(endpoint) {
     const url = new URL(endpoint);
     
@@ -36,8 +37,8 @@ async function getRequest(endpoint) {
     });
 }
 
+// getFootballMatchesByYearByGoals retrieves football matches for a given year where both teams scored the same number of goals (draw matches).
 async function getFootballMatchesByYearByGoals(year, goals) {
-    
     let endpoint = `https://jsonmock.hackerrank.com/api/football_matches?year=${year}`;
     endpoint += `&team1goals=${goals}`;
     endpoint += `&team2goals=${goals}`;
@@ -45,7 +46,8 @@ async function getFootballMatchesByYearByGoals(year, goals) {
     return getRequest(endpoint);
 }
 
-//Get the number of games ended up with draw score.
+// getNumDraws calculates the total number of draw matches (ties) for a given year.
+// It checks all possible goal scores from 0 to 10 (assuming no team scores more than 10 goals).
 async function getNumDraws(year) {
     // Constraints:
     // Assume that no team ever scored more than 10 goals.
@@ -61,11 +63,13 @@ async function getNumDraws(year) {
     return totalGameDraws;
 }
 
+// test runs getNumDraws for a given year and logs the result.
 async function test(year) {
     const drawGameCount = await getNumDraws(year);
     console.log(`There are ${drawGameCount} games that score draw on year ${year}`);
 }
 
+// main runs test cases for multiple years (2010-2017) to count draw matches.
 async function main() {
     await test(2010);
     await test(2011);

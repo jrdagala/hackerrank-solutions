@@ -1,29 +1,5 @@
 'use strict';
 
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
-
-
 /*
  * Complete the 'filledOrders' function below.
  *
@@ -48,25 +24,4 @@ function filledOrders(orders, k) {
     }
     
     return countOrders;    
-}
-
-function main() {
-    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-
-    const orderCount = parseInt(readLine().trim(), 10);
-
-    let order = [];
-
-    for (let i = 0; i < orderCount; i++) {
-        const orderItem = parseInt(readLine().trim(), 10);
-        order.push(orderItem);
-    }
-
-    const k = parseInt(readLine().trim(), 10);
-
-    const result = filledOrders(order, k);
-
-    ws.write(result + '\n');
-
-    ws.end();
 }
